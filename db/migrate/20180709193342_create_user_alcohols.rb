@@ -3,7 +3,6 @@ class CreateUserAlcohols < ActiveRecord::Migration[5.2]
     create_table :user_alcohols do |t|
       t.integer :user_id
       t.integer :alcohol_id
-
     end
   end
 end
