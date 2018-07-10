@@ -5,3 +5,31 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+#Alcohol:
+# t.string :brand
+# t.string :alcohol
+# t.string :alc_type
+# t.integer :year
+# t.text :notes
+Alcohol.create(brand: "Tito's", category: "Liquor", variety: "Vodka", year: 2014, notes: "It doesn't burn as much as others.")
+Alcohol.create(brand: "Smirnoff", category: "Liquor", variety: "Vodka", year: 2001, notes: "Better than svedka but still bad.")
+Alcohol.create(brand: "Crown Royal", category: "Liquor", variety: "Whiskey", year: 1998, notes: "Mixes well with gingerbeer.")
+Alcohol.create(brand: "Captain Morgan", category: "Liquor", variety: "Rum", year: 1989, notes: "I use it for jello shots.")
+Alcohol.create(brand: "Patron", category: "Liquor", variety: "Tequila", year: 2011, notes: "I prefer the reposado over the silver and the anjejo.")
+Alcohol.create(brand: "Old Admiral", category: "Liquor", variety: "Brandy", year: 2010, notes: "It's nice and smooth.")
+
+Alcohol.create(brand: "Cupcake", category: "Wine", variety: "Merlot", year: 2013, notes: "Good with steak.")
+Alcohol.create(brand: "Bogle", category: "Wine", variety: "Sauvignon Blanc", year: 2016, notes: "Light and refreshing.")
+Alcohol.create(brand: "Dark Horse", category: "Wine", variety: "Chardonnay", year: 2012, notes: "Would probably be good with sea food.")
+Alcohol.create(brand: "Meyer", category: "Wine", variety: "Cabernet Sauvignon", year: 2014, notes: "Complex and detailed with hints of blackberry.")
+Alcohol.create(brand: "Bedrock", category: "Wine", variety: "Zinfandel", year: 2015, notes: "A pure explosion of decadent fruit.")
+Alcohol.create(brand: "Bodega Colome", category: "Wine", variety: "Malbec", year: 2012, notes: "Rich-tasting with effusive minerality to the red berry flavors.")
+Alcohol.create(brand: "Clean Slate", category: "Wine", variety: "Riesling", year: 2015, notes: "Light and refreshing with a clean finish.")
+Alcohol.create(brand: "Sidebar", category: "Wine", variety: "Sauvignon Blanc", year: 2012, notes: "Focused and precise with detailed citrus flavors.")
+
+Alcohol.create(brand: "Guinness", category: "Beer", variety: "Irish Dry Stout", year: 2013, notes: "Burnt flavour derived from roasted unmalted barley.")
+Alcohol.create(brand: "Blue Moon", category: "Beer", variety: "Belgian White Ale", year: 2018, notes: "Slightly sweet with a fairly pronounced orange flavor.")
+Alcohol.create(brand: "Corona", category: "Beer", variety: "Pale Lager", year: 2017, notes: "Summertime beverage, usually served with a wedge of lime.")
+Alcohol.create(brand: "Stella Artois", category: "Beer", variety: "Belgian Pilsner" , year: 2014, notes: "Well-balanced malt sweetness with soft dry finish.")
+Alcohol.create(brand: "Pabst Blue Ribbon", category: "Beer", variety: "American Lager" , year: 2016, notes: "Straightforward taste with a light citrus touch.")
+Alcohol.create(brand: "Miller High Life", category: "Beer", variety: "American Lager" , year: 2015, notes: "Known as the champagne of beers because of its crisp, smooth taste.")
