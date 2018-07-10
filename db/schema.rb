@@ -10,12 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_10_152216) do
+ActiveRecord::Schema.define(version: 2018_07_10_140256) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "alcohols", force: :cascade do |t|
     t.string "brand"
-    t.string "category" #alcohol - wine, beer, liquor
-    t.string "variety" #type of alcohol - "vodka, malbec, IPA"
+    t.string "category"
+    t.string "variety"
     t.integer "year"
     t.text "notes"
   end
