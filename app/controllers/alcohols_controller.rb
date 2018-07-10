@@ -1,5 +1,5 @@
 class AlcoholsController < ApplicationController
-
+	
 	def new
 		@alcohol = Alcohol.new
 	end
