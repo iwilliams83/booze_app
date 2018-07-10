@@ -15,7 +15,7 @@ class AlcoholsController < ApplicationController
 	end
 
 	def delete
-
+		
 	end
 
 	def show
