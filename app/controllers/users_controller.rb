@@ -1,32 +1,50 @@
 class UsersController < ApplicationController
 
+	before_action :right_user, only: [:show]
+
 	def new
 		@user = User.new
 	end
 
 	def create
-		byebug
+		
 		@user = User.new(user_params)
 
 		if @user.save
-			redirect_to users_path
+			redirect_to user_path(@user)
 		else
 			render :new
 		end
 	end
 
 	def show
-		@user = User.find(params[:id])
+		@user = User.find(params[:id])		
 	end
 
-	def index
-
+	def home
+		@user = User.find(params[:id])
 	end
 
 	private
 
 	def user_params
-		params.require(:user).permit(:name, :email, :password_digest)
+		params.require(:user).permit(:name, :email, :password, :password_confirmation)
+	end
+
+	def right_user
+		if current_user.id != params[:id].to_i
+			redirect_to user_path current_user
+		end
+	end
+ 
+	def require_login
+	  unless logged_in?
+	    flash[:error] = "You must be logged in to access this section"
+	    redirect_to user_home_url # halts request cycle
+	  end
 	end
 end
+
+
+
 
