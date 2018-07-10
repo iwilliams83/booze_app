@@ -14,8 +14,8 @@ ActiveRecord::Schema.define(version: 2018_07_10_140256) do
 
   create_table "alcohols", force: :cascade do |t|
     t.string "brand"
-    t.string "alcohol"
-    t.string "alc_type"
+    t.string "category"
+    t.string "variety"
     t.integer "year"
     t.text "notes"
   end
