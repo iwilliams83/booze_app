@@ -10,6 +10,10 @@
 
 <h2> Beer </h2>
 
+<% @user.alcohols.each do |alcohol| %>
+		<% if alcohol.category = 'beer' %>
+	<%= link_to alcohol.brand, alcohol_path %>
+	<% end %>
 
 
 <h2> Liquor </h2>
