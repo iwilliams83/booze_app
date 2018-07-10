@@ -1,0 +1,22 @@
+<h1>Welcome, <%= @user.name %></h1>
+
+<h2> Wine </h2>
+
+<% @user.alcohols.each do |alcohol| %>
+		<% if alcohol.category == 'wine' %>
+	<%= link_to alcohol.brand, alcohol_path %>
+		<% end %>
+<% end %>
+
+<h2> Beer </h2>
+
+
+
+<h2> Liquor </h2>
+
+<% @user.alcohols.each do |alcohol| %>
+		<% if alcohol.category = 'liquor' %>
+	<%= link_to alcohol.brand, alcohol_path %>
+	<% end %>
+	
+<% end %>
