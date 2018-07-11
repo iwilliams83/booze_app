@@ -22,6 +22,10 @@ class AlcoholsController < ApplicationController
 		@alcohol = Alcohol.find(params[:id])
 	end
 
+	def index
+ 	 @alcohols = Alcohol.search(params[:search])
+	end
+
 	private
 
 	def alcohol_params
