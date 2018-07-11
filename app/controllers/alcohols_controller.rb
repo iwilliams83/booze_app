@@ -39,6 +39,10 @@ class AlcoholsController < ApplicationController
 
 	def index
 		@alcohols = Alcohol.all
+
+		if params[:search]
+			@alcohols = Alcohol.search(params[:search])
+		end
 	end
 
 	def delete
