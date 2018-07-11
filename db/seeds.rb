@@ -18,6 +18,7 @@ Alcohol.create(brand: "Captain Morgan", category: "Liquor", variety: "Rum", year
 Alcohol.create(brand: "Patron", category: "Liquor", variety: "Tequila", year: 2011, notes: "I prefer the reposado over the silver and the anjejo.")
 Alcohol.create(brand: "Old Admiral", category: "Liquor", variety: "Brandy", year: 2010, notes: "It's nice and smooth.")
 
+
 Alcohol.create(brand: "Cupcake", category: "Wine", variety: "Merlot", year: 2013, notes: "Good with steak.")
 Alcohol.create(brand: "Bogle", category: "Wine", variety: "Sauvignon Blanc", year: 2016, notes: "Light and refreshing.")
 Alcohol.create(brand: "Dark Horse", category: "Wine", variety: "Chardonnay", year: 2012, notes: "Would probably be good with sea food.")
@@ -26,6 +27,7 @@ Alcohol.create(brand: "Bedrock", category: "Wine", variety: "Zinfandel", year: 2
 Alcohol.create(brand: "Bodega Colome", category: "Wine", variety: "Malbec", year: 2012, notes: "Rich-tasting with effusive minerality to the red berry flavors.")
 Alcohol.create(brand: "Clean Slate", category: "Wine", variety: "Riesling", year: 2015, notes: "Light and refreshing with a clean finish.")
 Alcohol.create(brand: "Sidebar", category: "Wine", variety: "Sauvignon Blanc", year: 2012, notes: "Focused and precise with detailed citrus flavors.")
+
 
 Alcohol.create(brand: "Guinness", category: "Beer", variety: "Irish Dry Stout", year: 2013, notes: "Burnt flavour derived from roasted unmalted barley.")
 Alcohol.create(brand: "Blue Moon", category: "Beer", variety: "Belgian White Ale", year: 2018, notes: "Slightly sweet with a fairly pronounced orange flavor.")

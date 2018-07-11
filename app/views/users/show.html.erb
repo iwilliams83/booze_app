@@ -1,6 +1,5 @@
 <h1>Welcome, <%= @user.name %></h1>
 
-
 <h2> Wine </h2>
 
 <% @user.alcohols.each do |alcohol| %>
@@ -17,12 +16,13 @@
 	<% end %>
 <% end %>
 
-
 <h2> Liquor </h2>
 
 <% @user.alcohols.each do |alcohol| %>
 		<% if alcohol.category == 'liquor' %>
 	<%= link_to alcohol.brand, alcohol_path %>
 	<% end %>
-	
+
 <% end %>
+
+<p><%= button_to "Logout", logout_path, :method => :get %></p>
