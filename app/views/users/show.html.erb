@@ -1,10 +1,9 @@
 <h1>Welcome, <%= @user.name %></h1>
 
-
 <h2> Wine </h2>
 
 <% @user.alcohols.each do |alcohol| %>
-		<% if alcohol.category == 'wine' %>
+		<% if alcohol.category == 'Wine' %>
 	<%= link_to alcohol.brand, alcohol_path %>
 		<% end %>
 <% end %>
@@ -12,17 +11,18 @@
 <h2> Beer </h2>
 
 <% @user.alcohols.each do |alcohol| %>
-		<% if alcohol.category == 'beer' %>
+		<% if alcohol.category == 'Beer' %> 
 	<%= link_to alcohol.brand, alcohol_path %>
 	<% end %>
 <% end %>
-
 
 <h2> Liquor </h2>
 
 <% @user.alcohols.each do |alcohol| %>
-		<% if alcohol.category == 'liquor' %>
+		<% if alcohol.category == 'Liquor' %>
 	<%= link_to alcohol.brand, alcohol_path %>
 	<% end %>
-	
+
 <% end %>
+
+<p><%= button_to "Logout", logout_path, :method => :get %></p>

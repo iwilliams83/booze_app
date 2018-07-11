@@ -6,23 +6,29 @@ class UsersController < ApplicationController
 		@user = User.new
 	end
 
+	def welcome
+		@user = current_user
+		@alcohol = Alcohol.new
+	end
+
 	def create
-		
+
 		@user = User.new(user_params)
 
 		if @user.save
-			redirect_to user_path(@user)
+			session[:user_id] = @user.id
+			redirect_to welcome_path(@user)
 		else
 			render :new
 		end
 	end
 
 	def show
-		@user = User.find(params[:id])		
+		@user = User.find(params[:id])
 	end
 
 	def home
-		@user = User.find(params[:id])
+
 	end
 
 	private
@@ -36,7 +42,7 @@ class UsersController < ApplicationController
 			redirect_to user_path current_user
 		end
 	end
- 
+
 	def require_login
 	  unless logged_in?
 	    flash[:error] = "You must be logged in to access this section"
@@ -44,7 +50,3 @@ class UsersController < ApplicationController
 	  end
 	end
 end
-
-
-
-

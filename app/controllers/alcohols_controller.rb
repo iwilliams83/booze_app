@@ -6,12 +6,39 @@ class AlcoholsController < ApplicationController
 
 	def create
 		@alcohol = Alcohol.new(alcohol_params)
-
+		
 		if @alcohol.save
-			redirect_to alcohol_path
+			UserAlcohol.create(alcohol_id: @alcohol.id, user_id: current_user.id)
+			redirect_to user_path(current_user)
 		else
 			render :new
 		end
+	end
+
+	def add_to_user
+
+	end
+
+	def wines
+		@wines = Alcohol.all.select do |alcohol|
+			alcohol.category == "Wine"
+		end
+	end
+
+	def beers
+		@beers = Alcohol.all.select do |alcohol|
+			alcohol.category == "Beer"
+		end
+	end
+
+	def liquors
+		@liquors = Alcohol.all.select do |alcohol|
+			alcohol.category == "Liquor"
+		end	
+	end
+
+	def index
+		@alcohols = Alcohol.all
 	end
 
 	def delete
