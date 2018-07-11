@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   get '/home', to: 'users#home', as: 'user_home'
   post '/sessions', to: "sessions#create", as: "sessions"
   get '/logout', to: 'sessions#destroy', as: 'logout'
-
+  get '/wines', to: 'alcohols#wines', as: 'wines'
 end
 
 # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

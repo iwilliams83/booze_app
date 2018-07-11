@@ -1,0 +1,8 @@
+
+	<h1>Wine</h1>
+	
+	<ul>
+<% @wines.each do |wine| %>
+	<li><%= wine.brand %> - <%= wine.variety %>
+<% end %>
+	</ul>

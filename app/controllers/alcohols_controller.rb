@@ -14,6 +14,12 @@ class AlcoholsController < ApplicationController
 		end
 	end
 
+	def wines
+		@wines = Alcohol.all.select do |alcohol|
+			alcohol.category == "Wine"
+		end
+	end
+
 	def delete
 		
 	end
