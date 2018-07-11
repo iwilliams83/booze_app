@@ -1,5 +1,5 @@
 class AlcoholsController < ApplicationController
-	
+
 	def new
 		@alcohol = Alcohol.new
 	end
@@ -12,10 +12,6 @@ class AlcoholsController < ApplicationController
 		else
 			render :new
 		end
-	end
-
-	def delete
-		
 	end
 
 	def show
