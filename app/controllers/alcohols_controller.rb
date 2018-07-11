@@ -1,12 +1,12 @@
 class AlcoholsController < ApplicationController
-	
+
 	def new
 		@alcohol = Alcohol.new
 	end
 
 	def create
 		@alcohol = Alcohol.new(alcohol_params)
-		
+
 		if @alcohol.save
 			UserAlcohol.create(alcohol_id: @alcohol.id, user_id: current_user.id)
 			redirect_to user_path(current_user)
@@ -34,7 +34,7 @@ class AlcoholsController < ApplicationController
 	def liquors
 		@liquors = Alcohol.all.select do |alcohol|
 			alcohol.category == "Liquor"
-		end	
+		end
 	end
 
 	def index
@@ -46,7 +46,7 @@ class AlcoholsController < ApplicationController
 	end
 
 	def delete
-		
+
 	end
 
 	def show
