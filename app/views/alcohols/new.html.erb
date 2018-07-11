@@ -1,0 +1,22 @@
+  <!-- add new alcohol to your profile -->
+  <h3>Add Alcohol to Your Profile</h3>
+  <%= form_for @alcohol do |f| %>
+	
+	<%= f.label :category %>
+	<%= f.select :category, ['Wine', 'Beer', 'Liquor'] %><br>
+
+	<%= f.label :brand %>
+	<%= f.text_field :brand %><br>
+
+	<%= f.label :variety %>
+	<%= f.text_field :variety%><br>
+
+	<%= f.label :year %>
+	<%= f.number_field :year%><br>
+
+	<%= f.label :notes %>
+	<%= f.text_area :notes %><br>
+
+	<%= f.submit "Add to Profile" %>
+	
+  <% end %>
