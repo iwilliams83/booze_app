@@ -8,6 +8,7 @@ class UsersController < ApplicationController
 
 	def welcome
 		@user = current_user
+		@alcohol = Alcohol.new
 	end
 
 	def create
