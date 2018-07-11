@@ -10,8 +10,8 @@ class Alcohol < ApplicationRecord
 
 	def self.search(search)
 	  Alcohol.all.select do |alcohol|
-	  	alcohol.brand == search
-	  end
+	  	alcohol.brand.downcase.include?(search.downcase)
 	  end
 	end
 end
+

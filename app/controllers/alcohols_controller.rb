@@ -51,6 +51,7 @@ class AlcoholsController < ApplicationController
 
 	def show
 		@alcohol = Alcohol.find(params[:id])
+
 	end
 
 	private
