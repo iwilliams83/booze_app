@@ -20,16 +20,28 @@ class AlcoholsController < ApplicationController
 		end
 	end
 
+	def beers
+		@beers = Alcohol.all.select do |alcohol|
+			alcohol.category == "Beer"
+		end
+	end
+
+	def liquors
+		@liquors = Alcohol.all.select do |alcohol|
+			alcohol.category == "Liquor"
+		end	
+	end
+
+	def index
+		@alcohols = Alcohol.all
+	end
+
 	def delete
 		
 	end
 
 	def show
 		@alcohol = Alcohol.find(params[:id])
-	end
-
-	def index
- 	 @alcohols = Alcohol.search(params[:search])
 	end
 
 	private
