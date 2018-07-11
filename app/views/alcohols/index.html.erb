@@ -1,12 +1,15 @@
 
 	<h1>Alcohol</h1>
-	
+
 	<ul>
-<% @alcohols.each do |alcohol| %>
-	<li><%= alcohol.brand %> - <%= alcohol.variety %>
-<% end %>
+		<% @alcohols.each do |alcohol| %>
+			<p><b><%= alcohol.brand %> - <%= alcohol.variety %><b></p>
+				<% if !alcohol.stores.empty? %>
+				<p>Sold at:</p>
+					<% alcohol.stores.each do |store| %>
+						<li><%= link_to store.name, store_path(store) %></li>
+						<% end %>
+						<br><br>
+					<% end %>
+		<% end %>
 	</ul>
-
-	
-
-
