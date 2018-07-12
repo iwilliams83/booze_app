@@ -4,13 +4,11 @@ class Alcohol < ApplicationRecord
   has_many :store_alcohols
   has_many :stores, through: :store_alcohols
 
-  #validates :brand, uniqueness: true
-
-
+  #validate for unique entries?
 
 	def self.search(search)
 	  Alcohol.all.select do |alcohol|
-	  	alcohol.brand.downcase.include?(search.downcase)
+	  	alcohol.brand.downcase.include?(search.downcase) || alcohol.variety.downcase.include?(search.downcase) || alcohol.category.downcase.include?(search.downcase)
 	  end
 	end
 end
