@@ -10,40 +10,35 @@
 <% else %>
 
 	<div class="jumbotron">
+    <div style="text-align: center">
+
     <h1 class="display-4" style="text-align: center;">Welcome!</h1>
     <p class="lead" style="text-align: center;">Login or sign up to start tracking your booze!</p>
-    <p class="lead" style="justify-content: center;">
-      <!--<#%= button_to "Login or Sign Up", login_path, :method => :get %>-->
-      <form class="button_to" method="get" action="/login"><input type="submit" value="Login or Sign Up"></form>
-      </p>
-
-
-
+    <!-- <p class="lead" style="justify-content: center;"> -->
+      <%= button_to "Login or Sign Up", login_path, :method => :get, class: 'btn btn-secondary' %>
+      <!-- <form class="button_to" method="get" action="/login"><input type="submit" value="Login or Sign Up"></form> -->
+      <!-- </p> -->
+    </div>
   </div>
 
 
 
 <% end %>
 <br />
-<div class="container">
-  <div class="row">
-    <div class="col-sm">
-     <%= @first.brand %> - <%= @first.variety %><br />
-     <br><%= @first.year %><br />
-     <%= @first.notes %>
-    </div>
-    <div class="col-sm">
-      <%= @second.brand %> - <%= @second.variety %><br />
-     <br><%= @second.year %><br />
-     <%= @second.notes %>
-    </div>
-    <div class="col-sm">
-      <%= @third.brand %> - <%= @third.variety %><br />
-     <br><%= @third.year %><br />
-     <%= @third.notes %>
+<div class="card-deck" style='display: flex; margin: 0rem 2rem;'>
+  <% @random_alcs.each do |alc| %>
+  
+  <div class="card" style="width: 16rem; margin: .5rem;">
+    <div class="card-body">
+      <h5 class="card-title"><%= alc.brand %></h5>
+      <h6 class="card-subtitle mb-2 text-muted"><%= alc.variety %></h6><%= alc.year %> - <%= alc.notes %></p>
+     <%= link_to "More", alcohol_path(alc) %>
     </div>
   </div>
+  <% end %>
+
 </div>
+
 
 
 

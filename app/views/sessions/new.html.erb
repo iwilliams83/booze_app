@@ -1,3 +1,5 @@
+
+<div css="text-align:center;">
 <h3>Login:</h3>
 <%= form_tag sessions_path do %>
   <%= label_tag "Email" %>
@@ -5,7 +7,8 @@
   <%= label_tag "Password" %>
   <%= password_field_tag :password %><br>
   <%= submit_tag "Login" %><br>
-
+</div>
   <hr> 
   <p><%= link_to "Click here to create an account", new_user_path %></p>
 <% end %>
+
