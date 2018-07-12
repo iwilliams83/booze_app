@@ -4,9 +4,9 @@ class Alcohol < ApplicationRecord
   has_many :store_alcohols
   has_many :stores, through: :store_alcohols
 
-  validates :brand, uniqueness: true
+  #validates :brand, uniqueness: true
 
-  
+
 
 	def self.search(search)
 	  Alcohol.all.select do |alcohol|
@@ -14,4 +14,3 @@ class Alcohol < ApplicationRecord
 	  end
 	end
 end
-
