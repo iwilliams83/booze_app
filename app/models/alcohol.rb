@@ -4,6 +4,7 @@ class Alcohol < ApplicationRecord
   has_many :store_alcohols
   has_many :stores, through: :store_alcohols
 
+  
   #validate for unique entries?
 
 	def self.search(search)
