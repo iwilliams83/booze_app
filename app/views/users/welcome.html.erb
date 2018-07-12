@@ -4,13 +4,13 @@
 
 <% if @user %>
 	<h1 style="">Welcome <%= @user.name %>!</h1><br />
-	
+
   <%= button_to 'Add New Alcohol', new_alcohol_path, :method => :get, class: 'btn btn-secondary'  %><br>
 
 
 <% else %>
 
-	<div class="jumbotron">
+	<div class="jumbotron" style="background-color: #e1e6ea7d">
     <div style="text-align: center;">
 
     <h1 class="display-4" style="text-align: center;">Welcome!</h1>
@@ -23,9 +23,10 @@
 
 <% end %>
 <br />
+
 <div class="card-deck" style='display: flex; margin: 0rem 2rem;'>
   <% @random_alcs.each do |alc| %>
-  
+
   <div class="card" style="width: 16rem; margin: .5rem;">
     <div class="card-body">
       <h5 class="card-title"><%= alc.brand %></h5>
@@ -36,6 +37,7 @@
   <% end %>
 
 </div>
+
 
 
 
