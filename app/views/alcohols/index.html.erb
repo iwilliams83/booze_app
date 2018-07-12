@@ -3,13 +3,15 @@
 
 	<ul>
 		<% @alcohols.each do |alcohol| %>
-			<p><b><%= alcohol.brand %> - <%= alcohol.variety %><b></p>
+			<p><b><%= alcohol.brand %> - <%= alcohol.variety %></b></p>
 				<% if !alcohol.stores.empty? %>
 					<p>Sold at:</p>
 						<% alcohol.stores.each do |store| %>
-							<li><%= link_to store.name, store_path(store) %></li>
+							<%= link_to store.name, store_path(store) %><br>
 							<% end %>
-						<br><br>
+						<br>
+						<hr>
+						<br>
 					<% end %>
 		<% end %>
 	</ul>

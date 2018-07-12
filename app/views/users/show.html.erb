@@ -1,5 +1,5 @@
 <h2>Hi, <%= @user.name %>. Here's a list of your saved items:</h2>
-
+<br />
 <h3> Wines </h3>
 <ul>
 	<% @user.alcohols.each do |alcohol| %>
@@ -8,7 +8,6 @@
 			<% end %>
 	<% end %>
 </ul>
-
 
 <h3> Beer </h3>
 <ul>
@@ -28,3 +27,6 @@
 		<% end %>
 	<% end %>
 </ul>
+
+<br />
+<%= button_to "Add New Item", new_alcohol_path, :method => :get %>

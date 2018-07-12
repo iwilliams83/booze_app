@@ -8,9 +8,11 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
+
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="/welcome">Booze_App</a>
+    <nav class="navbar navbar-expand" style="background-color: #c0392b;">
+  <a class="navbar-brand" href="/"><img src="/goodlibeROSE.jpg"></a>
+
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -18,20 +20,30 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="/wines">Wines<span class="sr-only">(current)</span></a>
+        <b><a class="nav-link" href="/wines" style="color: #000;">Wines<span class="sr-only">(current)</span></a></b>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="/beers">Beer<span class="sr-only">(current)</span></a>
+        <b><a class="nav-link" href="/beers" style="color: #000;">Beer<span class="sr-only">(current)</span></a></b>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="/liquors">Liquor<span class="sr-only">(current)</span></a>
+        <b><a class="nav-link" href="/liquors" style="color: #000;">Liquor<span class="sr-only">(current)</span></a></b>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="/alcohols">View All<span class="sr-only">(current)</span></a>
+        <b><a class="nav-link" href="/alcohols" style="color: #000;">View All<span class="sr-only">(current)</span></a></b>
       </li>
-      <li class="nav-item active">
+
+    <% if current_user %>
+    <li class="nav-item active">
+        <a class="nav-link" href="/users/<%= current_user.id %>">Your Profile<span class="sr-only">(current)</span></a>
+      </li>
+     <li class="nav-item active">
         <a class="nav-link" href="/logout">Logout<span class="sr-only">(current)</span></a>
       </li>
+      <% end %>
+
+
+
+
       <!-- <li class="nav-item active">
         <a class="nav-link" href="/users/<#%= current_user.id %>">Your Profile<span class="sr-only">(current)</span></a>
       </li> -->
