@@ -11,4 +11,6 @@ class Alcohol < ApplicationRecord
 	  	alcohol.brand.downcase.include?(search.downcase) || alcohol.variety.downcase.include?(search.downcase) || alcohol.category.downcase.include?(search.downcase)
 	  end
 	end
+
+
 end

@@ -1,8 +1,8 @@
 
 	<h1>Wine</h1>
-	
+
 	<ul>
 <% @wines.each do |wine| %>
-	<li><%= wine.brand %> - <%= wine.variety %>
+	<li><%= link_to wine.brand, alcohol_path(wine) %> - <%= wine.variety %>
 <% end %>
 	</ul>

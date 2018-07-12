@@ -1,2 +1,9 @@
-<%= @store.name %>
-<%= @store.address %>
+<h1><%= @store.name %></h1>
+<p><%= @store.address %></p>
+
+<h2>Items sold here:</h2>
+<ul>
+  <% @store.alcohols.each do |alcohol| %>
+  <li><%= link_to alcohol.brand, alcohol_path(alcohol) %> - <%= alcohol.variety %></li>
+  <% end %>
+</ul>
