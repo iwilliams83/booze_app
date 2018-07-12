@@ -1,28 +1,30 @@
-<h1>Welcome, <%= @user.name %></h1>
+<h2>Hi, <%= @user.name %>. Here's a list of your saved items:</h2>
 
-<h2> Wine </h2>
+<h3> Wines </h3>
+<ul>
+	<% @user.alcohols.each do |alcohol| %>
+			<% if alcohol.category == 'Wine' %>
+				<li><%= link_to alcohol.brand, alcohol_path(alcohol) %></li>
+			<% end %>
+	<% end %>
+</ul>
 
-<% @user.alcohols.each do |alcohol| %>
-		<% if alcohol.category == 'Wine' %>
-	<%= link_to alcohol.brand, alcohol_path(alcohol) %>
+
+<h3> Beer </h3>
+<ul>
+	<% @user.alcohols.each do |alcohol| %>
+		<% if alcohol.category == 'Beer' %>
+			<li><%= link_to alcohol.brand, alcohol_path(alcohol) %></li>
 		<% end %>
-<% end %>
-
-<h2> Beer </h2>
-
-<% @user.alcohols.each do |alcohol| %>
-		<% if alcohol.category == 'Beer' %> 
-	<%= link_to alcohol.brand, alcohol_path(alcohol) %>
 	<% end %>
-<% end %>
+</ul>
 
-<h2> Liquor </h2>
 
-<% @user.alcohols.each do |alcohol| %>
+<h3> Liquor </h3>
+<ul>
+	<% @user.alcohols.each do |alcohol| %>
 		<% if alcohol.category == 'Liquor' %>
-	<%= link_to alcohol.brand, alcohol_path(alcohol) %>
+		<li><%= link_to alcohol.brand, alcohol_path(alcohol) %></li>
+		<% end %>
 	<% end %>
-
-<% end %>
-
-
+</ul>
