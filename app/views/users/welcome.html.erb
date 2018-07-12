@@ -9,9 +9,19 @@
 
 <% else %>
 
-	<h1>Welcome! Login or sign up to start tracking your booze!</h1>
+	<div class="jumbotron">
+    <h1 class="display-4" style="text-align: center;">Welcome!</h1>
+    <p class="lead" style="text-align: center;">Login or sign up to start tracking your booze!</p>
+    <p class="lead" style="justify-content: center;">
+      <!--<#%= button_to "Login or Sign Up", login_path, :method => :get %>-->
+      <form class="button_to" method="get" action="/login"><input type="submit" value="Login or Sign Up"></form>
+      </p>
 
-<%= button_to "Login or Sign Up", login_path, :method => :get %>
+
+
+  </div>
+
+
 
 <% end %>
 <br />
