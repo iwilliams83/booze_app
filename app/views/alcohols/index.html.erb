@@ -1,17 +1,20 @@
 
-	<h1>Alcohol</h1>
-
+	<h1 style="margin-left: 40px; margin-top: 20px;">Alcohol</h1>
+<div style="margin-top: 30px;">
 	<ul>
-		<% @alcohols.each do |alcohol| %>
-			<p><b><%= alcohol.brand %> - <%= alcohol.variety %></b></p>
-				<% if !alcohol.stores.empty? %>
-					<p>Sold at:</p>
-						<% alcohol.stores.each do |store| %>
-							<%= link_to store.name, store_path(store) %><br>
-							<% end %>
-						<br>
-						<hr>
-						<br>
-					<% end %>
-		<% end %>
-	</ul>
+	<% @alcohols.each do |alcohol| %>
+		<p><b><%= alcohol.brand %> - <%= alcohol.variety %></b></p>
+			<% if !alcohol.stores.empty? %>
+				<p>Sold at:</p>
+				<ul type="square">
+					<% alcohol.stores.each do |store| %>
+						<li><%= link_to store.name, store_path(store) %></li>
+						<% end %>
+					<br>
+				</ul>
+				<% end %>
+				<hr>
+	<% end %>
+</ul>
+
+</div>
