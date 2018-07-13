@@ -33,4 +33,8 @@
 
 <br />
 
+<%= button_to "Add New Item", new_alcohol_path, :method => :get, class: 'btn btn-secondary'%>
+<br />
+<br />
+<%= button_to 'Delete Account', user_path(@user), :method => :delete, data: {confirm: "Are you sure?"}, class: 'btn btn-secondary'  %>
 
