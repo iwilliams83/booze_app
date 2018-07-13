@@ -2,6 +2,10 @@ class UsersController < ApplicationController
 
 	before_action :right_user, only: [:show]
 
+	def index
+		redirect_to welcome_path
+	end
+	
 	def new
 		@user = User.new
 	end
@@ -53,4 +57,6 @@ class UsersController < ApplicationController
 	    redirect_to user_home_url # halts request cycle
 	  end
 	end
+
+	
 end

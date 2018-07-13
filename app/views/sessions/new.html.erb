@@ -13,4 +13,9 @@
   <p><%= link_to "Click here to create an account", new_user_path %></p>
 <% end %>
 </div>
+
+<% if flash[:alert] %>
+    <div class="alert" style="text-align: center;"><%= flash[:alert] %></div>
+  <% end %>
+	
 </div>
