@@ -39,6 +39,12 @@ class AlcoholsController < ApplicationController
 		@liquors = Alcohol.all.select do |alcohol|
 			alcohol.category == "Liquor"
 		end
+
+		@liquor_var_arr = 
+			@liquors.map do |liquor| 
+				liquor.variety 
+			end.uniq	
+		
 	end
 
 	def index
