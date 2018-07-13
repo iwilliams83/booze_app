@@ -1,9 +1,16 @@
-
 <h1 style="margin-left: 40px; margin-top: 20px;">Liquor</h1>
 <p>
 	<ul>
-		<% @liquors.each do |liquor| %>
-			<p><%= link_to liquor.brand, alcohol_path(liquor) %> - <%= liquor.variety %></p>
-		<% end %>
-	</ul>
+	<% @liquor_var_arr.each do |liquor_variety| %>
+		<h3><%= liquor_variety %></h3>
+		<ul>
+			<% @liquors.each do |liquor| %>
+				<% if liquor.variety == liquor_variety %>
+					<li><%= link_to liquor.brand, alcohol_path(liquor) %></li>
+				<% end %>
+			<% end %>
+		</ul>
+		<hr>
+	<% end %>
 </p>
+
