@@ -27,12 +27,24 @@ class AlcoholsController < ApplicationController
 		@wines = Alcohol.all.select do |alcohol|
 			alcohol.category == "Wine"
 		end
+
+		@wine_var_arr = 
+			@wines.map do |wine| 
+				wine.variety 
+			end.uniq	
+
+
 	end
 
 	def beers
 		@beers = Alcohol.all.select do |alcohol|
 			alcohol.category == "Beer"
 		end
+
+		@beer_var_arr = 
+			@beers.map do |beer| 
+				beer.variety 
+			end.uniq
 	end
 
 	def liquors

@@ -2,9 +2,20 @@
 <h1 style="margin-left: 40px; margin-top: 20px;">Wines</h1>
 <p>
 	<ul>
-		<% @wines.each do |wine| %>
-			<p><%= link_to wine.brand, alcohol_path(wine) %> - <%= wine.variety %></p>
+		<% @wine_var_arr.each do |wine_variety| %>
+			<h3><%= wine_variety %></h3>
+			<ul>
+				<% @wines.each do |wine| %>
+					<% if wine.variety == wine_variety %>
+						<li><%= link_to wine.brand, alcohol_path(wine) %></li>
+					<% end %>
+				<% end %>
+			</ul>
+			<hr>
 		<% end %>
+
 	</ul>
 
 </p>
+
+
