@@ -19,9 +19,6 @@ class AlcoholsController < ApplicationController
 		end
 	end
 
-	def add_to_user
-
-	end
 
 	def wines
 		@wines = Alcohol.all.select do |alcohol|
@@ -49,9 +46,6 @@ class AlcoholsController < ApplicationController
 		end
 	end
 
-	def delete
-
-	end
 
 	def show
 		@alcohol = Alcohol.find(params[:id])
