@@ -60,7 +60,35 @@ class AlcoholsController < ApplicationController
 	end
 
 	def index
-		@alcohols = Alcohol.all
+		@alcohols = Alcohol.all	
+
+		@liquors = Alcohol.all.select do |alcohol|
+			alcohol.category == "Liquor"
+		end
+
+		@liquor_var_arr = 
+			@liquors.map do |liquor| 
+				liquor.variety 
+			end.uniq	
+
+		@beers = Alcohol.all.select do |alcohol|
+			alcohol.category == "Beer"
+		end
+
+		@beer_var_arr = 
+			@beers.map do |beer| 
+				beer.variety 
+			end.uniq
+			
+		@wines = Alcohol.all.select do |alcohol|
+			alcohol.category == "Wine"
+		end
+
+		@wine_var_arr = 
+			@wines.map do |wine| 
+				wine.variety 
+			end.uniq	
+
 		@stores = Store.all
 		if params[:search]
 			@alcohols = Alcohol.search(params[:search])
