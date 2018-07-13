@@ -1,8 +1,10 @@
 
-	<h1>Wine</h1>
-
+<h1 style="margin-left: 40px; margin-top: 20px;">Wines</h1>
+<p>
 	<ul>
-<% @wines.each do |wine| %>
-	<li><%= link_to wine.brand, alcohol_path(wine) %> - <%= wine.variety %>
-<% end %>
+		<% @wines.each do |wine| %>
+			<p><%= link_to wine.brand, alcohol_path(wine) %> - <%= wine.variety %></p>
+		<% end %>
 	</ul>
+
+</p>

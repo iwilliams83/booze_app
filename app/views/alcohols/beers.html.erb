@@ -1,8 +1,9 @@
 
-	<h1>Beer</h1>
-
+<h1 style="margin-left: 40px; margin-top: 20px;">Beer</h1>
+<p>
 	<ul>
-<% @beers.each do |beer| %>
-	<li><%= link_to beer.brand, alcohol_path(beer) %> - <%= beer.variety %>
-<% end %>
+		<% @beers.each do |beer| %>
+			<p><%= link_to beer.brand, alcohol_path(beer) %> - <%= beer.variety %></p>
+		<% end %>
 	</ul>
+</p>
