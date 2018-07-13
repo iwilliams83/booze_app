@@ -5,7 +5,11 @@ class AlcoholsController < ApplicationController
 	end
 
 	def create
-		@alcohol = Alcohol.new(alcohol_params)
+		@alcohol = Alcohol.find_by(brand: alcohol_params[:brand], variety: alcohol_params[:variety])
+		if @alcohol
+		else
+			@alcohol = Alcohol.new(alcohol_params)
+		end
 
 		if @alcohol.save
 			UserAlcohol.create(alcohol_id: @alcohol.id, user_id: current_user.id)
