@@ -1,12 +1,22 @@
-require 'set'
-
 class Alcohol < ApplicationRecord
+
+# brand
+# category
+# variety
+# year
+# notes
+  #validates :brand, :variety, uniqueness: {scope: :year, message: "should only have one vintage!"}
+  validates :year, inclusion:{ in: 1900..Date.today.year }
+  validates :brand, presence: true
+  validates :category, presence: true
+  # validates
+
   has_many :user_alcohols
   has_many :users, through: :user_alcohols
   has_many :store_alcohols
   has_many :stores, through: :store_alcohols
 
-  
+
   #validate for unique entries?
 
 	def self.search(search)
@@ -15,13 +25,7 @@ class Alcohol < ApplicationRecord
 	  end
 	end
 
-	def self.rand_n(n, max)
-		randoms = Set.new
-   			loop do
-       			randoms << rand(max)
-       		return randoms.to_a if randoms.size >= n
-   			end
-		end
+
 
 
 end
